@@ -11,7 +11,102 @@
     <title>Weather</title>
 </head>
 <body>
-    <h1>Hello World</h1>
+    <div class="container">
+        <header>
+            <h2 class="today" id="now-date">Today</h2>
+            <nav> 
+                <div class="search" id="search-form">
+                <form class="form-inline d-flex justify-content-right md-form form-sm">
+                    <input class="form-control form-control-sm mr-3 w-45" type="text" placeholder="Search" aria-label="Search" id="search-input">
+                    <button type="submit" class="btn btn-default">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                    </button>
+                    <button class="btn btn-default" id="home">
+                        <i class="fas fa-location-arrow"></i>
+                    </button>
+                </form>
+                </div>
+            </nav>
+        </header>
+
+        <div class="weather">
+            <section class="current-weather">
+                <h1 class="city">Budapest</h1>
+                <h2 class="temp-and-icon">
+                    <i class="fas fa-cloud-sun main-icon"></i> 
+                    <span class="now-temp" id="now-temp">23</span>
+                    <span class="c-f">
+                        <a href="#" id="celsius">°C</a> | <a href="#" id="fahrenheit">°F</a>
+                    </span>
+                </h2>
+
+                <h3>
+                    <span id="high-temp">23</span>/<span id="low-temp">15</span>
+                </h3>
+
+                <p>
+                    <span id="description">Mostly Cloudy</span><br/>
+                    <i class="fas fa-tint"></i> 6% <br/>
+                    <i class="fas fa-wind"></i> <span id="wind">9</span> mph <br/>
+
+                </p>
+            </section>
+
+            <section class="forecast">
+                <h1>
+                    Forecast
+                </h1>
+                <div class="day-1">
+                    <p>Fri</p>
+                    <div class="info">
+                        <i class="fas fa-cloud-sun-rain"></i>
+                        <span id="high-temp-1">23</span>/<span id="low-temp-1">15</span>
+                    </div>
+                </div>
+
+                <div class="day-2">
+                    <p>Fri</p>
+                    <div class="info">
+                        <i class="fas fa-cloud-sun-rain"></i>
+                        <span id="high-temp-2">23</span>/<span id="low-temp-2">15</span>
+                    </div>
+                </div>
+
+                <div class="day-3">
+                    <p>Fri</p>
+                    <div class="info">
+                        <i class="fas fa-cloud-sun-rain"></i>
+                        <span id="high-temp-3">23</span>/<span id="low-temp-3">15</span>
+                    </div>
+                </div>
+
+                <div class="day-4">
+                    <p>Fri</p>
+                    <div class="info">
+                        <i class="fas fa-cloud-sun-rain"></i>
+                        <span id="high-temp-4">23</span>/<span id="low-temp-4">15</span>
+                    </div>
+                </div>
+
+                <div class="day-5">
+                    <p>Fri</p>
+                    <div class="info">
+                        <i class="fas fa-cloud-sun-rain"></i>
+                        <span id="high-temp-5">23</span>/<span id="low-temp-5">15</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <footer>
+        <p class="open-source">
+        <a href="https://github.com/rajwinderb/Weather-app">
+            Open-Source Code 
+        </a>
+        by Rajwinder Bhatoe
+    </p>
+    </footer>
     <script src="src/app.js"></script>
 </body>
 </html>

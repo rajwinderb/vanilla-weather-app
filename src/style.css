@@ -1,0 +1,143 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 24px;
+    color: #464647;
+}
+
+
+div.container{
+    width: 1000px;
+    height: 540px;
+    left: 50%;
+    margin-top: 100px;
+    background: #FCF5ED;
+    box-shadow: 0px 0px 15px -6px #464647;
+    border-radius: 5px;
+    padding-bottom: 30px;
+}
+
+div.container a{
+   color: #797879;
+   text-decoration: none;
+   transition: ease-in-out;
+}
+
+div.container a:hover{
+    color: #797879;
+    text-decoration: underline;
+}
+
+header{
+    padding: 20px 15px 10px 15px;
+    overflow: hidden;
+    border-bottom: 1px solid #464647;
+}
+  
+header h2{
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    font-size: 36px;
+    float: left;
+}
+  
+header nav{
+    float: right;
+    margin-top: 5px;
+}
+
+div.weather{
+    overflow: hidden;
+}
+
+div.weather section{
+    float: left;
+}
+
+section.current-weather{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 66.666%;
+    text-align: center;
+    padding-left: 5px;
+}
+
+section.current-weather h1{
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    font-size: 84px;
+
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+section.current-weather h2{
+    font-family: 'Lora', serif;
+    font-size: 64px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.main-icon{
+    font-size: 102px;
+}
+
+span.c-f{
+    font-size: 20px;
+    position: relative;
+    top: -30px;
+    left: -10px;
+}
+
+section.current-weather h3{
+    font-family: 'Lora', serif;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+section.current-weather p{
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+section.forecast{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 33.333%;
+    text-align: center;
+    border-left: 1px solid #464647;
+    font-size: 17px;
+}
+
+section.forecast h1{
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    font-size: 32px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+section.forecast p{
+    margin-bottom:4px;
+}
+
+section.forecast div{
+    margin-bottom: 20px;
+}
+  
+footer{
+    width: 1000px;
+    left: 50%;
+    margin: 10px auto;
+    
+}
+
+footer a{
+    color: #797879;
+    text-decoration: none;
+    transition: ease-in-out;
+}
+
+footer a:hover{
+    color: #797879;
+     text-decoration: underline;
+}
