@@ -200,7 +200,7 @@ function showFahrenheitTemp(event){
     axios.get(apiUrl).then(showTemperature);
 
     //let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-    axios.get(apiUrl).then(getForecastMetric);
+    axios.get(apiUrl).then(getForecastImperial);
 }
 
 //changes temperatures to celsius
