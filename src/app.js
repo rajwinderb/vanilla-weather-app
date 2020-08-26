@@ -29,7 +29,7 @@ function showTemperature(response) {
     description.innerHTML = response.data.weather[0].description;
   
     let wind = document.querySelector("#wind");
-    wind.innerHTML = Math.round(response.data.wind.speed);
+    wind.innerHTML = Math.round(response.data.wind.speed * 3.6);
 
     let humidity = document.querySelector("#humidity");
     humidity.innerHTML = Math.round(response.data.main.humidity);
@@ -62,7 +62,7 @@ function searchLocation(position) {
     let units = "metric";
     let latitude  = position.coords.latitude;
     let longitude = position.coords.longitude;
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
     axios.get(apiUrl).then(showTemperature);
 }
 
@@ -70,6 +70,39 @@ function searchLocation(position) {
 function getCurrentLocation(event) {
     event.preventDefault();
     navigator.geolocation.getCurrentPosition(searchLocation);
+}
+
+//changes temperature to fahrenheit
+function showFahrenheitTemp(event){
+    event.preventDefault()
+    //remove active class from celsius link and add active class to fahrenheit link
+    celsiusLink.classList.remove("active")
+    fahrenheitLink.classList.add("active")
+
+    let windUnits = document.querySelector("#wind-units");
+    windUnits.innerHTML = "mph";
+
+    let apiKey = "c1b241c9ee4ba5b2a6cffb1b36346f23";
+    let city = document.querySelector("#city").textContent;
+    let units = "imperial"
+    
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+  
+    axios.get(apiUrl).then(showTemperature);
+}
+
+//changes temperatures to celsius
+function showCelsiusTemp(event){
+    event.preventDefault()
+    //remove active class from fahrenheit and add active class to celcius 
+    fahrenheitLink.classList.remove("active")
+    celsiusLink.classList.add("active")
+
+    let windUnits = document.querySelector("#wind-units");
+    windUnits.innerHTML = "km/h";
+
+    let city = document.querySelector("#city").textContent;
+    apiInfo(city)
 }
 
 //Changes the date and time
@@ -83,6 +116,14 @@ searchForm.addEventListener("submit", changeCity);
 //searchs for current location when button clicked
 let currentLocation = document.querySelector("#current-location");
 currentLocation.addEventListener("click", getCurrentLocation);
+
+//click to change to fahrenheit
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", showFahrenheitTemp);
+
+//click to change to celsius
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", showCelsiusTemp);
 
 //actuve weather for rome
 apiInfo("Rome");

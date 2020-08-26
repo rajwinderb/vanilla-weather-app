@@ -27,6 +27,15 @@ div.container a:hover{
     text-decoration: underline;
 }
 
+div.container a.active{
+    color: #464647;
+    cursor: default;
+}
+
+div.container a.active:hover{
+    text-decoration: none;
+}
+
 header{
     padding: 20px 15px 10px 15px;
     overflow: hidden;

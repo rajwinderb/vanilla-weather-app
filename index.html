@@ -17,7 +17,7 @@
             <nav> 
                 <div class="search" id="search-form">
                 <form class="form-inline d-flex justify-content-right md-form form-sm">
-                    <input class="form-control form-control-sm mr-3 w-45" type="text" placeholder="Search" aria-label="Search" id="search-input">
+                    <input class="form-control form-control-sm mr-3 w-45" type="text" placeholder="Search for a city…" aria-label="Search" id="search-input" autocomplete="off">
                     <button type="submit" class="btn btn-default">
                         <i class="fas fa-search" aria-hidden="true"></i>
                     </button>
@@ -36,7 +36,7 @@
                     <img src="" alt="" id="main-weather-icon">
                     <span class="now-temp" id="now-temp"></span>
                     <span class="c-f">
-                        <a href="#" id="celsius">°C</a> | <a href="#" id="fahrenheit">°F</a>
+                        <a href="#" id="celsius" class="active">°C</a> | <a href="#" id="fahrenheit">°F</a>
                     </span>
                 </h2>
 
@@ -47,7 +47,7 @@
                 <p>
                     <span id="description"></span><br/>
                     humidity: <span id="humidity"></span> % <br/>
-                    wind:</i> <span id="wind"></span> mph <br/>
+                    wind: <span id="wind"></span> <span id="wind-units">km/h</span>  <br/>
 
                 </p>
             </section>
