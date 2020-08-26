@@ -62,6 +62,10 @@ div.weather section{
     float: left;
 }
 
+div.weather img{
+    height: 120px;
+}
+
 section.current-weather{
     margin-top: 10px;
     margin-bottom: 10px;
