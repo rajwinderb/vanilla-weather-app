@@ -1,3 +1,4 @@
+//gets the current day and time and displays it
 function nowDate(){
     let now = new Date();
     let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -9,9 +10,8 @@ function nowDate(){
 }
 
 
-//Changes the temperature etc of the page
+//gets and changes the temperature etc of the page from the api response
 function showTemperature(response) {
-    console.log(response)
     document.querySelector("#city").innerHTML = response.data.name;
 
     let temperature = Math.round(response.data.main.temp);
@@ -33,10 +33,14 @@ function showTemperature(response) {
 
     let humidity = document.querySelector("#humidity");
     humidity.innerHTML = Math.round(response.data.main.humidity);
+
+    let mainIcon = document.querySelector('#main-weather-icon')
+    mainIcon.setAttribute('src', `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+    mainIcon.setAttribute('alt', response.data.weather[0].description);
   
 }
 
-//gets api for city
+//gets api response for given city
 function apiInfo(cityName){
     let apiKey = "c1b241c9ee4ba5b2a6cffb1b36346f23";
     let units = "metric";
@@ -45,13 +49,14 @@ function apiInfo(cityName){
     axios.get(apiUrl).then(showTemperature);
 }
   
-//gets the city name
+//gets the city name from the search
 function changeCity(event){
     event.preventDefault();
     let searchInput = document.querySelector("#search-input");
     apiInfo(searchInput.value);
 }
 
+//gets api response for the current location
 function searchLocation(position) {
     let apiKey = "c1b241c9ee4ba5b2a6cffb1b36346f23";
     let units = "metric";
@@ -61,18 +66,23 @@ function searchLocation(position) {
     axios.get(apiUrl).then(showTemperature);
 }
 
+//uses navigator to get the current location
 function getCurrentLocation(event) {
     event.preventDefault();
     navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
+//Changes the date and time
 let currentDate = document.querySelector("#now-date");
 currentDate.innerHTML = nowDate();
 
+//search for city when submit clicked
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", changeCity);
 
+//searchs for current location when button clicked
 let currentLocation = document.querySelector("#current-location");
 currentLocation.addEventListener("click", getCurrentLocation);
 
+//actuve weather for rome
 apiInfo("Rome");
