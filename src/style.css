@@ -17,7 +17,7 @@ div.container{
 }
 
 div.container a{
-   color: #797879;
+   color: #EC6E4B;
    text-decoration: none;
    transition: ease-in-out;
 }
@@ -127,11 +127,16 @@ section.forecast h1{
 
 section.forecast p{
     margin-bottom:4px;
+    line-height: 1;
 }
 
-section.forecast div{
-    margin-bottom: 20px;
+section.forecast img{
+    height: 50px;
 }
+/* 
+section.forecast div{
+    margin-bottom: 10px;
+} */
   
 footer{
     width: 1000px;
@@ -141,7 +146,7 @@ footer{
 }
 
 footer a{
-    color: #797879;
+    color: #EC6E4B;
     text-decoration: none;
     transition: ease-in-out;
 }
