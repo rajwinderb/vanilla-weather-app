@@ -238,5 +238,5 @@ fahrenheitLink.addEventListener("click", showFahrenheitTemp);
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", showCelsiusTemp);
 
-//actuve weather for rome
+//active weather for rome
 apiInfo("Rome");
