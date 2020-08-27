@@ -173,6 +173,7 @@ function searchLocation(position) {
     let longitude = position.coords.longitude;
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
     axios.get(apiUrl).then(showTemperature);
+    axios.get(apiUrl).then(getForecastMetric)
 }
 
 //uses navigator to get the current location
